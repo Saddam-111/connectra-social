@@ -11,19 +11,19 @@ import { storyRouter } from './routes/story.routes.js';
 import { messageRouter } from './routes/message.routes.js';
 import { app, server } from './socket.js';
 import helmet from 'helmet'
-import rateLimit from 'express-rate-limit'
+// import rateLimit from 'express-rate-limit'
 dotenv.config()
 
-const limiter = rateLimit({
-  windowMs: 15*60*1000,
-  max: 50,
-  message: {
-    success: false,
-    message: "Too many requests from this IP, please try again later."
-  }
-})
+// const limiter = rateLimit({
+//   windowMs: 15*60*1000,
+//   max: 500,
+//   message: {
+//     success: false,
+//     message: "Too many requests from this IP, please try again later."
+//   }
+// })
 
-app.use(limiter)
+// app.use(limiter)
 
 const port = process.env.PORT;
 app.use(helmet())
